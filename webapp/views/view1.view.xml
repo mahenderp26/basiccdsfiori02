@@ -1,0 +1,41 @@
+<mvc:XMLView xmlns:internal="sap.landvisz.internal" xmlns:table="sap.ui.table" xmlns:mvc="sap.ui.core.mvc" 
+             xmlns:m="sap.m"
+             controllerName="com.wb.cds.controllers.view1">   
+    <!-- <m:List items="{/zcds_odata_so}">
+        <m:items>
+            <m:ObjectListItem icon="{vbeln}" 
+                              id="{posnr}" 
+            ></m:ObjectListItem>
+        </m:items>
+    </m:List>         -->
+
+    <table:Table rows="{/zcds_odata_so}" selectionMode="Single">
+        <table:columns>
+            <table:Column label="Sales Document">
+                <table:template>
+                    <m:Input value="{vbeln}"></m:Input>
+                </table:template>
+            </table:Column>
+            <table:Column label="Sales Document Item">
+                <table:template>
+                    <m:Input value="{posnr}"></m:Input>
+                </table:template>
+            </table:Column>
+            <table:Column label="Material Number">
+                <table:template>
+                    <m:Input value="{matnr}"></m:Input>
+                </table:template>
+            </table:Column>
+            <table:Column label="Target quantity in sales units">
+                <table:template>
+                    <m:Input value="{zmeng}"></m:Input>
+                </table:template>
+            </table:Column>
+            <table:Column label="Target quantity UoM">
+                <table:template>
+                    <m:Input value="{zieme}"></m:Input>
+                </table:template>
+            </table:Column>                                                
+        </table:columns>
+    </table:Table>
+</mvc:XMLView>

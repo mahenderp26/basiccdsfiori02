@@ -1,0 +1,5 @@
+<mvc:XMLView xmlns:mvc="sap.ui.core.mvc" 
+             xmlns:m="sap.m"
+             controllerName="com.wb.cds.controllers.app">   
+    <m:App id="appId"></m:App>        
+</mvc:XMLView>

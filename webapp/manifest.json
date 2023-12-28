@@ -1,0 +1,64 @@
+{
+    "_version": "1.42.0",
+    "sap.app": {
+      "id": "fiori5",
+      "type": "application",
+      "applicationVersion": {
+        "version": "0.0.1"
+      },
+      "dataSources": {
+        "cdsData":{
+            "uri": "/sap/opu/odata/sap/ZCDS_ODATA_SO_CDS/",
+            "type": "OData",
+            "settings": {
+                "odataVersion": "2.0"
+            }
+        }
+      }
+    },            
+    "sap.ui5":{
+        "rootView":{
+            "viewName": "com.wb.cds.views.app",
+            "type": "XML",
+            "id": "appId"
+        },
+        "routing": {
+            "config":{
+                "viewPath": "com.wb.cds.views",
+                "viewType": "XML",
+                "controlId": "appId",
+                "clearControlAggregation": true
+            },
+            "routes":[
+                {
+                    "name": "Basic",
+                    "pattern": "",
+                    "target":["view"]
+                }
+            ],
+            "targets": {
+                "view":{
+                    "viewName": "view1",
+                    "viewId": "view1",
+                    "viewType": "XML",
+                    "controlAggregation": "pages",
+                    "clearControlAggregation": true                    
+                }
+            }
+        },
+        "models": {
+            "":{
+                "dataSource": "cdsData",
+                "preload": true,
+                "settings": {
+                    "defaultBindingMode": "TwoWay",
+                    "defaultCountMode": "Inline",
+                    "refreshAfterChange": false,
+                    "metadataUrlParams": {
+                      "sap-value-list": "none"
+                    }
+                  }                  
+            }
+        }
+    } 
+}         
